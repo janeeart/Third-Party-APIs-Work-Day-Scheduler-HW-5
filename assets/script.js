@@ -27,13 +27,15 @@ for (i=9; i<=17; i++){
 }
 
 function saveToLocal(){
-    var savedData = JSON.parse(localStorage.getItem(timeText) || [];
+
+
+    var savedData = JSON.parse(localStorage.getItem("currentHour")) || [];
     var storageObject = {
     text : $(this).prev().val(),
-    time : $(currentHour).val()
+    time : $(this)
     }
-savedData.push(storageObject)
-       localStorage.setItem(timeText, JSON.stringify(savedData));
+savedData.push(storageObject);
+       localStorage.setItem("currentHour", JSON.stringify(savedData));
     }
 
 $(document).on("click", "button", saveToLocal)
