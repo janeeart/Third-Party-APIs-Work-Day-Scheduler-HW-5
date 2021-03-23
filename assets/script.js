@@ -32,7 +32,7 @@ function saveToLocal(){
     var savedData = JSON.parse(localStorage.getItem("currentHour")) || [];
     var storageObject = {
     text : $(this).prev().val(),
-    time : $(this)
+    time : $(this).timeText([i-9])
     }
 savedData.push(storageObject);
        localStorage.setItem("currentHour", JSON.stringify(savedData));
